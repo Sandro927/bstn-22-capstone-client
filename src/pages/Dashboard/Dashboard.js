@@ -13,7 +13,7 @@ class Dashboard extends React.Component {
         if (!token) {
             this.props.history.push('/login');
         } else {
-            axios.get('http://localhost:8080/users/current', {
+            axios.get('http://localhost:3030/users/current', {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -28,14 +28,19 @@ class Dashboard extends React.Component {
         }
     }
 
+    handleLogout = () => {
+        sessionStorage.clear();
+        this.props.history.push('/login');
+    }
+
     render() {
         return (
             <div>
                 <h1>Dashboard</h1>
 
-                <h2>Welcome //user//</h2>
+                <h2>Welcome {this.state.userInfo.name}</h2>
 
-                <button>Log Out</button>
+                <button onClick={this.handleLogout}>Log Out</button>
             </div>
         )  
     }
