@@ -24,6 +24,7 @@ class Dashboard extends React.Component {
                     userInfo: res.data,
                     isLoading: false
                 })
+                sessionStorage.setItem('username', this.state.userInfo.username);
             })
         }
     }

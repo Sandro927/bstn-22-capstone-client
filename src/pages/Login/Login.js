@@ -5,7 +5,8 @@ export default class Login extends Component {
 
   state = {
     username: "",
-    password: ""
+    password: "",
+    userSubmitted: false
   }
 
   
@@ -17,6 +18,9 @@ export default class Login extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    this.setState({
+      userSubmitted: true
+    })
 
     axios.post('http://localhost:3030/users/login', {
         username: this.state.username,
@@ -45,14 +49,28 @@ export default class Login extends Component {
                 <label htmlFor="username" className="login__field">
                   Username
                 </label>
-                <input type="text" id="username" name="username" className="login__input" value={this.state.username} onChange={this.handleChange}/>
+                <input 
+                  type="text" 
+                  id="username" 
+                  name="username" 
+                  className="login__input" 
+                  value={this.state.username} 
+                  onChange={this.handleChange}
+                />
             </div>
 
             <div className="login__field">
                 <label htmlFor="password" className="login__field">
                   Password
                 </label>
-                <input type="password" id="password" name="password" className="login__input" value={this.state.password} onChange={this.handleChange}/>
+                <input 
+                  type="password" 
+                  id="password" 
+                  name="password" 
+                  className="login__input" 
+                  value={this.state.password} 
+                  onChange={this.handleChange}
+                />
             </div>
 
             <button>Login</button>

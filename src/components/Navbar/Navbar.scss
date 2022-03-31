@@ -1,0 +1,91 @@
+@use "../../styles/partials/mixins" as *;
+
+.navbar {
+   
+    width: 100%;
+    
+    
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    right: 0;
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+    
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include desktop {
+            width: 1020px;
+            margin: 0 auto;
+            flex-grow: 0;
+            left:0;
+        }
+    }
+
+    &__link {
+        color: black;
+        display: flex;
+        align-items: center;
+        color: rgb(107 114 128);
+        
+    }
+
+   
+
+    &__icon {
+        width:24px !important;
+        height:24px !important;
+        
+        padding: 1rem;
+
+        @include tablet {
+            width: 30px !important;
+            height: 30px !important;  
+        }
+
+        &:hover {
+            background-color: rgb(243 244 246);
+            color: rgb(139 92 246);
+        }
+    }
+
+    &__center {
+        // display: none;  
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        
+
+        @include x-small {
+            flex-grow: 1;
+            margin: 0 10%; 
+            position: static; 
+            box-shadow: none;
+        }
+
+        @include tablet {
+            margin: 0 20%;
+            
+        }
+
+       
+        
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+    }
+
+    &__link--active {
+        color: rgb(139 92 246);
+    }
+}
