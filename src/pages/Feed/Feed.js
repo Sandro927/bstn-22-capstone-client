@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NewPost from '../../components/NewPost/NewPost';
 import Sidebar from '../../components/Sidebar/Sidebar';
+import Friendbar from '../../components/Friendbar/Friendbar';
 import axios from 'axios';
 import './Feed.scss';
 
@@ -38,6 +39,7 @@ export class Feed extends Component {
         <main className="feed__main">
           <Sidebar />
           <NewPost />
+          <Friendbar />
         </main>
         
       </section>

@@ -1,6 +1,6 @@
 @use "../../styles/partials/mixins" as *;
 
-.sidebar {
+.friendbar {
     margin: 1rem;
     display: none;
     
@@ -29,10 +29,18 @@
     }
 
     &__icon {
-        
         width: 20px !important;
         height: 20px !important;
-       
+    }
+
+    &__title {
+        color: #6b7280;
+        display:none;
+        font-size: 15px;
+
+        @include tablet {
+            display:block;
+        }
     }
 
 }
