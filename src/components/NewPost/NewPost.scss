@@ -11,10 +11,12 @@
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     color: rgb(107 114 128);
     font-weight: 500;
+    flex-grow: 1;
+    height: 40px;
 
     &__avatar {
-        width: 40px !important;
-        height: 40px !important;;
+        width: 36px !important;
+        height: 36px !important;;
         padding-right: .5rem;
     }
 
@@ -25,12 +27,16 @@
 
     &__input {
         border-radius: 9999px;
-        height: 40px;
+        height: 36px;
         box-sizing: border-box;
         border: none;
         background-color: rgb(243 244 246);
         flex-grow: 1; 
         padding: 0 20px;
         margin-left: .5rem
+    }
+
+    &__input:focus {
+        border: none;
     }
 }

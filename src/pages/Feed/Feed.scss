@@ -4,6 +4,10 @@
     margin-top: 56px;
     height: 100vh;
 
+    &__main {
+        display: flex;
+    }
+
     @include tablet {
         margin-top: 62px;
     }

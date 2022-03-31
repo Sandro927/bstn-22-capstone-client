@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import NewPost from '../../components/NewPost/NewPost'
+import NewPost from '../../components/NewPost/NewPost';
+import Sidebar from '../../components/Sidebar/Sidebar';
 import axios from 'axios';
 import './Feed.scss';
 
@@ -34,8 +35,11 @@ export class Feed extends Component {
   render() {
     return (
       <section className="feed">
-        <h1 className="feed__title">Feed</h1>
-        <NewPost />
+        <main className="feed__main">
+          <Sidebar />
+          <NewPost />
+        </main>
+        
       </section>
     )
   }

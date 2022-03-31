@@ -18,7 +18,7 @@ function Navbar() {
     <div className='navbar'>
       <div className='navbar__content'>
         <div className='navbar__left'>
-          <NavLink to='/' className='navbar__link'> 
+          <NavLink to='/' className='navbar__link navbar__link--active'> 
             <VideogameAssetIcon className="navbar__icon"/>
           </NavLink>
         </div>
