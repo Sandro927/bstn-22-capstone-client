@@ -4,7 +4,7 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import Signup from './pages/Signup/Signup';
 import Login from './pages/Login/Login';
 import Feed from './pages/Feed/Feed';
-import './App.css';
+import './App.scss';
 import Navbar from './components/Navbar/Navbar';
 
 function App() {

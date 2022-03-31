@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NewPost from '../../components/NewPost/NewPost'
 import axios from 'axios';
 import './Feed.scss';
 
@@ -32,7 +33,10 @@ export class Feed extends Component {
 
   render() {
     return (
-      <div class="feed">Feed</div>
+      <section className="feed">
+        <h1 className="feed__title">Feed</h1>
+        <NewPost />
+      </section>
     )
   }
 }

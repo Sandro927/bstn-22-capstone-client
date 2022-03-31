@@ -1,0 +1,36 @@
+@use "../../styles/partials/mixins" as *;
+
+.new-post {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: .5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    color: rgb(107 114 128);
+    font-weight: 500;
+
+    &__avatar {
+        width: 40px !important;
+        height: 40px !important;;
+        padding-right: .5rem;
+    }
+
+    &__form {
+        display: flex;
+        flex: 1 1 0%;
+    }
+
+    &__input {
+        border-radius: 9999px;
+        height: 40px;
+        box-sizing: border-box;
+        border: none;
+        background-color: rgb(243 244 246);
+        flex-grow: 1; 
+        padding: 0 20px;
+        margin-left: .5rem
+    }
+}

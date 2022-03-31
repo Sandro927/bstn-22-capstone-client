@@ -18,7 +18,7 @@ function Navbar() {
     <div className='navbar'>
       <div className='navbar__content'>
         <div className='navbar__left'>
-          <NavLink activeClassName='navbar__link--active' to='/nowherea' className='navbar__link'> 
+          <NavLink to='/' className='navbar__link'> 
             <VideogameAssetIcon className="navbar__icon"/>
           </NavLink>
         </div>
@@ -45,7 +45,7 @@ function Navbar() {
           <NavLink activeClassName='navbar__link--active' to='/nowhere' className='navbar__link'> 
             <FaceIcon className="navbar__icon"/>
           </NavLink>
-          <p>{token ? sessionStorage.getItem('username') : <button>Log in</button>}</p>
+          <p className='navbar__user'>{token ? sessionStorage.getItem('username') : <button>Login</button>}</p>
         </div>
       </div>        
     </div>
