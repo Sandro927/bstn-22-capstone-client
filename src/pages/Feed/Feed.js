@@ -40,7 +40,7 @@ export class Feed extends Component {
         : 
         <main className="feed__main">
           <Sidebar />
-          <PostContent userId={this.state.userInfo.id}/>
+          <PostContent userId={this.state.userInfo.userId}/>
           <Friendbar />
         </main>
         }
