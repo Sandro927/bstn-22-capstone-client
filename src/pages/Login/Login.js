@@ -27,7 +27,7 @@ export default class Login extends Component {
         password: this.state.password,
     })
     .then(res => {
-        console.log(res)
+       
         let token = res.data.token;
         sessionStorage.setItem('authToken', token)
         this.props.history.push('/');

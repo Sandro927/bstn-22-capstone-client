@@ -1,0 +1,25 @@
+@use "../../styles/partials/mixins" as *;
+
+.post-content {
+    width: 100%;
+
+    @include x-small {
+        width: 65%;
+        margin: 0 auto;
+    }
+
+    @include tablet {
+        width: 50%;
+    }
+   
+    @include desktop {
+        width: 500px;
+    }
+
+
+
+    &__title {
+        text-align: center;
+    }
+    
+}

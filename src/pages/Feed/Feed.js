@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NewPost from '../../components/NewPost/NewPost';
+import PostContent from '../../components/PostContent/PostContent';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import Friendbar from '../../components/Friendbar/Friendbar';
 import axios from 'axios';
@@ -23,7 +23,6 @@ export class Feed extends Component {
             }
         })
         .then(res => {
-            console.log(res)
             this.setState({
                 userInfo: res.data,
                 isLoading: false
@@ -36,12 +35,15 @@ export class Feed extends Component {
   render() {
     return (
       <section className="feed">
+        {
+        this.state.isLoading ? "Loading...." 
+        : 
         <main className="feed__main">
           <Sidebar />
-          <NewPost />
+          <PostContent userId={this.state.userInfo.id}/>
           <Friendbar />
         </main>
-        
+        }
       </section>
     )
   }

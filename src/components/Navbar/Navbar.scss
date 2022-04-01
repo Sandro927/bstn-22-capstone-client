@@ -1,7 +1,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .navbar {
-    height: 56px;
+    height: 60px;
     width: 100%;
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
@@ -10,7 +10,7 @@
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 
     @include tablet {
-        height: 62px;
+        height: 64px;
     }
 
     &__content {
@@ -37,14 +37,14 @@
    
 
     &__icon {
-        width:24px !important;
-        height:24px !important;
+        width:28px !important;
+        height:28px !important;
         
         padding: 1rem;
 
         @include tablet {
-            width: 30px !important;
-            height: 30px !important;  
+            width: 32px !important;
+            height: 32px !important;  
         }
 
         &:hover {
@@ -81,6 +81,9 @@
     &__right {
         display: flex;
         align-items: center;
+        @include tablet {
+            width: 20%;    
+        }
     }
 
     &__link--active {
@@ -93,5 +96,13 @@
         @include tablet {
             display: block;
         }
+    }
+
+    &__left {
+
+        @include tablet {
+            width: 20%;    
+        }
+        
     }
 }

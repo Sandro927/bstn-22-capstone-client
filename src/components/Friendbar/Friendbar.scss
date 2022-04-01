@@ -9,6 +9,9 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        position: fixed;
+        top: 56px;
+        right: 0;
     }
 
     &__row {
@@ -29,8 +32,8 @@
     }
 
     &__icon {
-        width: 20px !important;
-        height: 20px !important;
+        width: 28px !important;
+        height: 28px !important;
     }
 
     &__title {
