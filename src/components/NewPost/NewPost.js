@@ -23,11 +23,11 @@ class NewPost extends React.Component {
         userId: this.state.userId
      })
      .then((res) => {
-        console.log(res.data.message);
         this.setState({
           postContent: "",
           postImage: "",
         })
+        this.props.refreshPosts();
      })
      .catch((err) => {
        console.log(err);

@@ -11,23 +11,31 @@ export class PostContent extends Component {
     }
 
     componentDidMount() {
+        this.fetchPosts();
+    }
+
+    fetchPosts = () => {
         axios.get('http://localhost:3030/posts')
-            .then(res => {
-                this.setState({ posts: res.data})
-            })
-            .catch(err => {
-                console.log(err);
-            })
+        .then(res => {
+            this.setState({ posts: res.data})
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
+
+    refreshPosts= () =>  {
+        this.fetchPosts();
     }
 
   render() {
     return (
         <div className="post-content">
             <h1 className="post-content__title">Feed</h1>
-            <NewPost userId={this.props.userId}/>
+            <NewPost userId={this.props.userId} refreshPosts={this.refreshPosts}/>
             { 
                 this.state.posts ? 
-                    this.state.posts.map(post =><Post postContent={post} key={post.id}/>) : 'Loading....'
+                    this.state.posts.map(post =><Post postContent={post} key={post.postId}/>) : 'Loading....'
             }
             
         </div>
