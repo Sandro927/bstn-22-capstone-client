@@ -1,3 +1,4 @@
+@use "../../styles/partials/mixins" as *;
 
 .post {
     margin: 1rem;
@@ -71,6 +72,10 @@
     }
 
     &__footer-content:hover {
+        color: rgb(139 92 246);
+    }
+    
+    &__footer-content--active {
         color: rgb(139 92 246);
     }
 }

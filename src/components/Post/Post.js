@@ -1,5 +1,6 @@
 import React from 'react';
 import './Post.scss';
+import PostsComments from '../CommentsList/CommentsList'
 import FaceIcon from '@mui/icons-material/Face'; //Avatar Icon
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import AddCommentIcon from '@mui/icons-material/AddComment';
@@ -8,19 +9,32 @@ import axios from 'axios';
 
 class Post extends React.Component {
 
+  
+
   state = {
-    postUser: null,
+    username: null,
+    userId: null,
     postContent: null,
+    postImage: null,
     postedAt: null,
+    postId: null,
     likeCount: null,
+    commentsActive: false
   }
 
   componentDidMount() {
+
+    
+    const { username, userId, postContent, postImage, postedAt, postId, likeCount  } = this.props.postContent;
+  
     this.setState({
-      postUser: this.props.postContent.post_user_id,
-      postContent: this.props.postContent.postContent,
-      postedAt: format(this.props.postContent.postedAt, 'en_US'),
-      likeCount: this.props.postContent.likeCount
+      username: username,
+      userId: userId,
+      postedAt: format(postedAt, 'en_US'),
+      postContent: postContent,
+      postImage: postImage,
+      postId: postId,
+      likeCount: likeCount
     })
   }
 
@@ -39,7 +53,12 @@ class Post extends React.Component {
       console.log(err);
       })
     })
-    
+  }
+
+  handleCommentClick = () => {
+    this.setState({
+      commentsActive: !this.state.commentsActive
+    })
   }
 
   render() {
@@ -48,10 +67,10 @@ class Post extends React.Component {
           <div className="post__content">
               <FaceIcon className="post__avatar"/>
               <div className="post__body">
-                  <p className="post__user">User {this.state.postUser}</p>
+                  <p className="post__user">{this.state.username}</p>
                   <div className="post__user-info">
                     <p className="post__date">{this.state.postedAt}</p>
-                    <p className="post__likes">{this.state.likeCount} likes</p>
+                    <p className="post__likes">{this.state.likeCount} Likes</p>
                   </div>
                   
               </div>
@@ -68,11 +87,18 @@ class Post extends React.Component {
               <p className="post__footer-text">Like</p>
             </div>
 
-            <div className="post__footer-content">
+            <div 
+              className={this.state.commentsActive ? "post__footer-content post__footer-content--active" :  "post__footer-content"} 
+              onClick={this.handleCommentClick}
+            >
               <AddCommentIcon className="post__footer-icon"/>
               <p className="post__footer-text"> Comment</p>
             </div>
           </div>
+          {
+            this.state.commentsActive &&  <PostsComments />
+          }
+         
       </div>
     ) 
   }

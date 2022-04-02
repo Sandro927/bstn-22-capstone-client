@@ -31,7 +31,6 @@ export class PostContent extends Component {
   render() {
     return (
         <div className="post-content">
-            <h1 className="post-content__title">Feed</h1>
             <NewPost userId={this.props.userId} refreshPosts={this.refreshPosts}/>
             { 
                 this.state.posts ? 

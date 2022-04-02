@@ -1,0 +1,52 @@
+@use "../../styles/partials/mixins" as *;
+
+.comment {
+    display: flex;
+    padding-top: 1.5rem;
+
+    &__content{
+        flex-grow: 1;
+        padding-left: 1rem;
+    }
+
+    &__body {
+        background-color: #f3f4f6;
+        border-radius: 10px;
+        padding: .5rem;
+        margin-right: 40px;
+
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 40px;
+        padding-top: .5rem;
+        color: rgb(156 163 175);
+        font-size: 13px;
+    }
+
+    &__likes {
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        height: 1rem !important;
+        width: 1rem !important;
+        padding-right: 0.5rem;
+    }
+
+    &__user {
+        font-size: 13px;
+        color: black;
+        font-weight: 600;
+        padding-bottom: .5rem;
+    }
+
+    &__text {
+        font-size: 13px;
+        color: black;
+    }
+}
