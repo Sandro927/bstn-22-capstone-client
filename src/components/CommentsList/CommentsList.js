@@ -7,7 +7,7 @@ export class CommentsList extends Component {
   render() {
     return (
       <div className="comments">
-        <AddComment />
+        <AddComment postId={this.props.postId}/>
         <Comment />
         <Comment />
         <Comment />

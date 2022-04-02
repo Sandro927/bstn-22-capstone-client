@@ -28,6 +28,7 @@ export class Feed extends Component {
                 isLoading: false
             })
             sessionStorage.setItem('username', this.state.userInfo.username);
+            sessionStorage.setItem('userId', this.state.userInfo.userId);
         })
     }
   }

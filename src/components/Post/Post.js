@@ -1,6 +1,6 @@
 import React from 'react';
 import './Post.scss';
-import PostsComments from '../CommentsList/CommentsList'
+import CommentsList from '../CommentsList/CommentsList'
 import FaceIcon from '@mui/icons-material/Face'; //Avatar Icon
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import AddCommentIcon from '@mui/icons-material/AddComment';
@@ -96,7 +96,7 @@ class Post extends React.Component {
             </div>
           </div>
           {
-            this.state.commentsActive &&  <PostsComments />
+            this.state.commentsActive &&  <CommentsList postId={this.state.postId}/>
           }
          
       </div>
