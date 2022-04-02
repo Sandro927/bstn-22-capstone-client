@@ -10,25 +10,32 @@ export class CommentsList extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:3030/posts/${this.props.postId}/comments`)
-      .then(res => {
-        this.setState({
-          comments: res.data
-        })
-      })
-      .catch(err => {
-
-      })
+    this.fetchCommentData();
   }
 
+  fetchCommentData = () => {
+    axios.get(`http://localhost:3030/posts/${this.props.postId}/comments`)
+    .then(res => {
+      this.setState({
+        comments: res.data
+      })
+    })
+    .catch(err => {
+
+    })
+  }
+
+  refreshComments = () => {
+    this.fetchCommentData();
+  }
 
   render() {
     return (
       <div className="comments">
-        <AddComment postId={this.props.postId}/>
+        <AddComment postId={this.props.postId} refreshComments={this.refreshComments}/>
         { 
           this.state.comments && 
-          this.state.comments.map((comment) => <Comment key={comment.commentId} commentData={comment}/>)
+          this.state.comments.map((comment) => <Comment postId={this.props.postId} key={comment.commentId} commentData={comment}/>)
         }
       </div>
     )

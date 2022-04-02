@@ -36,6 +36,11 @@
         height: 1rem !important;
         width: 1rem !important;
         padding-right: 0.5rem;
+        cursor: pointer;
+    }
+
+    &__icon:hover {
+        color: rgb(139 92 246);
     }
 
     &__user {

@@ -18,7 +18,7 @@ export class AddComment extends Component {
             postId: this.props.postId
         })
         .then((res) => {
-
+            this.props.refreshComments();
         })
         .catch((err) => {
 
