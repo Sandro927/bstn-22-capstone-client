@@ -1,28 +1,63 @@
 import React, { Component } from 'react';
 import FaceIcon from '@mui/icons-material/Face'; //Avatar Icon
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import { format, render, cancel, register } from 'timeago.js';
 import './Comment.scss';
 
 export class Comment extends Component {
+
+    state = {
+        username: null,
+        userId: null,
+        commentContent: null,
+        commentedAt: null,
+        commentId: null,
+        likeCount: null,
+      }
+
+      componentDidMount() {
+
+        const { username, userId, commentContent, commentImage, commentedAt, commentId, likeCount  } = this.props.commentData;
+        
+        this.setState({
+            username: username,
+            userId: userId,
+            commentedAt: format(commentedAt, 'en_US'),
+            commentContent: commentContent,
+            commentImage: commentImage,
+            commentId: commentId,
+            likeCount: likeCount
+          })
+      }
+    
+
   render() {
     return (
+       
       <div className="comment">
-            <FaceIcon />
-            <div className="comment__content">
-                <div className="comment__body">
-                    <p className="comment__user">User</p>
-                    <p className="comment__text">Comment goes here....</p> 
-                </div>
+           {
+            !this.state.commentContent ? "Loading..." 
+            :
+                <>
+                    <FaceIcon />
+                    <div className="comment__content">
+                        <div className="comment__body">
+                            <p className="comment__user">{this.state.username}</p>
+                            <p className="comment__text">{this.state.commentContent}</p> 
+                        </div>
 
-                <div className="comment__footer">
-                    <div className="comment__likes">
-                        <ThumbUpIcon className="comment__icon"/>
-                        <p>0 Likes</p>
+                        <div className="comment__footer">
+                            <div className="comment__likes">
+                                <ThumbUpIcon className="comment__icon"/>
+                                <p>{this.state.likeCount} Likes</p>
+                            </div>
+                            <p>{this.state.commentedAt}</p>
+                        </div>
                     </div>
-                    <p>2 hours ago</p>
-                </div>
-            </div>
+                </>
+            }
         </div>
+        
     )
   }
 }

@@ -5,11 +5,16 @@ import Comment from '../Comment/Comment';
 import './CommentsList.scss';
 
 export class CommentsList extends Component {
+  state = {
+    comments: null
+  }
 
   componentDidMount() {
     axios.get(`http://localhost:3030/posts/${this.props.postId}/comments`)
       .then(res => {
-        console.log(res.data)
+        this.setState({
+          comments: res.data
+        })
       })
       .catch(err => {
 
@@ -21,11 +26,10 @@ export class CommentsList extends Component {
     return (
       <div className="comments">
         <AddComment postId={this.props.postId}/>
-        <Comment />
-        <Comment />
-        <Comment />
-        <Comment />
-        <Comment />
+        { 
+          this.state.comments && 
+          this.state.comments.map((comment) => <Comment key={comment.commentId} commentData={comment}/>)
+        }
       </div>
     )
   }
