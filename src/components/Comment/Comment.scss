@@ -18,9 +18,7 @@
     }
 
     &__footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flex-space-center;
         margin-right: 40px;
         padding-top: .5rem;
         color: rgb(156 163 175);
@@ -28,8 +26,7 @@
     }
 
     &__likes {
-        display: flex;
-        align-items: center;
+        @include flex-center;
     }
 
     &__icon {
@@ -53,5 +50,9 @@
     &__text {
         font-size: 13px;
         color: black;
+    }
+
+    &__avatar {
+        @include avatar;
     }
 }

@@ -1,10 +1,9 @@
 @use "../../styles/partials/mixins" as *;
 
 .post {
+    @include flex-column;
     margin: 1rem;
     background-color: white;
-    display: flex;
-    flex-direction: column;
     border-radius: .5rem;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     color: rgb(107 114 128);
@@ -16,15 +15,18 @@
     }
 
     &__avatar {
-        height: 40px;
-        width: 40px ;
-        border-radius: 50%;
+       @include avatar;
     }
 
     &__date, &__likes  {
         font-size: 0.75rem; 
         line-height: 1rem; 
         color: rgb(156 163 175);
+    }
+
+    &__likes {
+        color: #8b5cf6;
+        font-weight: 600;
     }
 
     &__user {
@@ -40,14 +42,13 @@
     &__text {
         padding-top: 1rem;
         color: black;
-        font-weight: 600;
         margin: 0 1rem 1rem;
     }
 
     &__footer {
-        display: flex;
+        @include flex-center;
         justify-content: space-around;
-        align-items: center;
+        
         color: rgb(156 163 175);
         border-top: 1px solid #f3f4f6;
         padding-top: 1rem;
@@ -57,8 +58,7 @@
 
 
     &__user-info {
-        display: flex;
-        justify-content: space-between;
+        @include flex-space;
     }
 
     &__footer-icon {
@@ -68,8 +68,7 @@
     }
 
     &__footer-content {
-        display: flex;
-        align-items: center;
+        @include flex-center;
         cursor: pointer;
     }
 
@@ -79,5 +78,9 @@
     
     &__footer-content--active {
         color: rgb(139 92 246);
+    }
+
+    &__link {
+        text-decoration: none;
     }
 }

@@ -83,7 +83,7 @@ class Post extends React.Component {
               <img className="post__avatar" src={dummyAvatars[this.state.userId]} alt="avatar"/>
              
               <div className="post__body">
-                <Link to={`/users/current/dashboard`}>
+                <Link to={`/users/current/dashboard`} className="post__link">
                 <p className="post__user">{this.state.username}</p>
                 </Link>
                 <div className="post__user-info">

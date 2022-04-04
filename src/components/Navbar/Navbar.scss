@@ -3,8 +3,8 @@
 .navbar {
     height: 60px;
     width: 100%;
-    position: fixed; /* Set the navbar to fixed position */
-    top: 0; /* Position the navbar at the top of the page */
+    position: fixed; 
+    top: 0; 
     right: 0;
     background-color: white;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -15,9 +15,7 @@
     }
 
     &__content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flex-space-center;
 
         @include desktop {
             width: 1020px;
@@ -29,8 +27,7 @@
 
     &__link {
         color: black;
-        display: flex;
-        align-items: center;
+        @include flex-center;
         color: rgb(107 114 128);
         
     }
@@ -60,8 +57,7 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        display: flex;
-        justify-content: space-between;
+        @include flex-space;
         box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
         background-color: white;
         
@@ -80,10 +76,9 @@
     }
 
     &__right {
-        display: flex;
-        align-items: center;
-        @include tablet {
-            width: 20%;    
+        @include flex-middle;
+        @include x-small {
+            width: 40%;    
         }
     }
 
@@ -101,9 +96,15 @@
 
     &__left {
 
-        @include tablet {
-            width: 20%;    
+        @include x-small {
+            width: 40%;    
         }
         
+    }
+
+    &__logo {
+        @include flex-middle;
+        text-decoration: none;
+        font-weight: 600;
     }
 }

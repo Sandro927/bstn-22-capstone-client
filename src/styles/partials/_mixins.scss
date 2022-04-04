@@ -15,3 +15,48 @@
         @content;
     }
 }
+
+@mixin avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+
+    @include tablet {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%; 
+    }
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flex-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin flex-space {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin flex-space-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

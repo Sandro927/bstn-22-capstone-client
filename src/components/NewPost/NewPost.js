@@ -57,19 +57,20 @@ class NewPost extends React.Component {
     return (
       <div className="new-post">
           <form className="new-post__form" onSubmit={this.onPostSubmit}>
-              {/* <FaceIcon className="new-post__avatar"/> */}
-              <img src={dummyAvatars[this.state.userId]} alt="avatar" className="new-post__avatar" />
-              <input 
-                type="text" 
-                name="postContent" 
-                className="new-post__input" 
-                placeholder={`What's on your mind, ${this.user}?`}
-                value={this.state.postContent}
-                onChange={this.handleChange}
-              />
-              <button type="submit" className="new-post__button">
-                <SendIcon className="new-post__icon"/>
-              </button>
+              <div className="new-post__body">
+                <img src={dummyAvatars[this.state.userId]} alt="avatar" className="new-post__avatar" />
+                <input 
+                  type="text" 
+                  name="postContent" 
+                  className="new-post__input" 
+                  placeholder={`What's on your mind, ${this.user}?`}
+                  value={this.state.postContent}
+                  onChange={this.handleChange}
+                />
+                <button type="submit" className="new-post__button">
+                  <SendIcon className="new-post__icon"/>
+                </button>
+              </div>
               <div className="new-post__photo-input">
                 <label htmlFor="new-post__photo-label">
                   <AddAPhotoIcon className="new-post__icon"/>
