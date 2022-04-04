@@ -8,7 +8,6 @@ import './App.scss';
 import Navbar from './components/Navbar/Navbar';
 
 function App() {
-
   
   return (
     <BrowserRouter>
@@ -18,6 +17,7 @@ function App() {
           <Route path="/" exact component={Feed} />
           <Route path="/signup" component={Signup} />
           <Route path="/login" component={Login} />
+          <Route path="/users/current/Dashboard" render={(routerProps)=><Dashboard {...routerProps}/>} />
         </Switch>
       </div>
     </BrowserRouter>

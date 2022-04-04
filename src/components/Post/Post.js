@@ -6,6 +6,7 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import AddCommentIcon from '@mui/icons-material/AddComment';
 import { format, render, cancel, register } from 'timeago.js';
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 
 class Post extends React.Component {
 
@@ -67,11 +68,13 @@ class Post extends React.Component {
           <div className="post__content">
               <FaceIcon className="post__avatar"/>
               <div className="post__body">
-                  <p className="post__user">{this.state.username}</p>
-                  <div className="post__user-info">
-                    <p className="post__date">{this.state.postedAt}</p>
-                    <p className="post__likes">{this.state.likeCount} Likes</p>
-                  </div>
+                <Link to={`/users/current/dashboard`}>
+                <p className="post__user">{this.state.username}</p>
+                </Link>
+                <div className="post__user-info">
+                  <p className="post__date">{this.state.postedAt}</p>
+                  <p className="post__likes">{this.state.likeCount} Likes</p>
+                </div>
                   
               </div>
           </div>
