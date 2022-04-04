@@ -2,7 +2,6 @@
 
 .post {
     margin: 1rem;
-    padding: 1rem;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -13,11 +12,13 @@
     &__content {
         display: flex;
         align-items: center;
+        margin: 1rem 1rem 0;
     }
 
     &__avatar {
-        height: 40px !important;
-        width: 40px !important;
+        height: 40px;
+        width: 40px ;
+        border-radius: 50%;
     }
 
     &__date, &__likes  {
@@ -40,6 +41,7 @@
         padding-top: 1rem;
         color: black;
         font-weight: 600;
+        margin: 0 1rem 1rem;
     }
 
     &__footer {
@@ -49,7 +51,7 @@
         color: rgb(156 163 175);
         border-top: 1px solid #f3f4f6;
         padding-top: 1rem;
-        margin-top: 1rem;
+        margin-bottom: 1rem;
 
     }
 

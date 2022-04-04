@@ -29,6 +29,7 @@ export class Feed extends Component {
             })
             sessionStorage.setItem('username', this.state.userInfo.username);
             sessionStorage.setItem('userId', this.state.userInfo.userId);
+            //If the user has not filled out their profile yet, redirect to profile page.
         })
     }
   }
@@ -41,7 +42,7 @@ export class Feed extends Component {
         : 
         <main className="feed__main">
           <Sidebar />
-          <PostContent userId={this.state.userInfo.userId}/>
+          <PostContent userId={this.state.userInfo.userId} />
           <Friendbar />
         </main>
         }

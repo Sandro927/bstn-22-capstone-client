@@ -1,0 +1,18 @@
+@use "../../styles/partials/mixins" as *;
+
+.dashboard {
+    display: flex;
+    margin-top: 60px;
+    flex-direction: column;
+    
+
+
+    @include x-small {
+     margin-left: 6rem;   
+    }
+
+    @include tablet {
+        // flex-direction: row;
+        flex-wrap: wrap;
+    }
+}

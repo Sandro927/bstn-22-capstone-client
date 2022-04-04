@@ -1,0 +1,25 @@
+@use "../../styles/partials/mixins" as *;
+
+.dashmenu {
+    display: none;
+
+    @include x-small {
+        position: fixed;
+        top: 61px;
+        height: 100vh;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: #6b7280;
+        padding: 1rem;
+        
+    }
+
+    &__links {
+        text-decoration: none;
+        padding-bottom: 1rem;
+        color:white;
+
+       
+    }
+}

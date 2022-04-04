@@ -6,15 +6,13 @@
     
 
     @include x-small {
-       
+        display: flex;
+        position: fixed;
+        top: 56px;
+        left: 0;
         flex-direction: column;
         align-items: flex-start;
-        
     }
-    @include tablet {
-        display: flex;
-    }
-
 
     &__row {
         display: flex;

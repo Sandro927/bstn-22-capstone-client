@@ -1,0 +1,21 @@
+@use "../../styles/partials/mixins" as *;
+
+.gameslist {
+    background-color: white;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: .5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    flex-grow: 1;
+    min-width: 0;
+    display: none;
+
+    @include tablet {
+        text-align: left;
+        display: block;
+    }
+ 
+    &__username {
+        padding-bottom: 0.5rem;
+    }
+}

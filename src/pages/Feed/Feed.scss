@@ -3,13 +3,12 @@
 .feed {
     margin-top: 56px;
     
+    @include tablet {
+        margin-top: 62px;
+    } 
 
     &__main {
         display: flex;
-    }
-
-    @include tablet {
-        margin-top: 62px;
     }
 
     &__title {

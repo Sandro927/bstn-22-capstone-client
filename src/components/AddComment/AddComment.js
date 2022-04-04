@@ -19,6 +19,9 @@ export class AddComment extends Component {
         })
         .then((res) => {
             this.props.refreshComments();
+            this.setState({
+                commentContent: ""
+            })
         })
         .catch((err) => {
 

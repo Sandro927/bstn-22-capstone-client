@@ -31,7 +31,7 @@ export class PostContent extends Component {
   render() {
     return (
         <div className="post-content">
-            <NewPost userId={this.props.userId} refreshPosts={this.refreshPosts}/>
+            <NewPost userId={this.props.userId} userAvatar={this.props.userAvatar} refreshPosts={this.refreshPosts}/>
             { 
                 this.state.posts ? 
                     this.state.posts.map(post =><Post postContent={post} key={post.postId}/>) : 'Loading....'

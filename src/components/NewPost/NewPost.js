@@ -4,8 +4,17 @@ import SendIcon from '@mui/icons-material/Send';
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import './NewPost.scss';
 import axios from 'axios';
+import avatar1 from '../../assets/avatars/avatar1.png';
+import avatar2 from '../../assets/avatars/avatar2.png';
+import avatar3 from '../../assets/avatars/avatar3.png';
+import avatar4 from '../../assets/avatars/avatar4.png';
+import avatar5 from '../../assets/avatars/avatar5.png';
+import avatar6 from '../../assets/avatars/avatar6.png';
+import avatar7 from '../../assets/avatars/avatar7.png';
 
 class NewPost extends React.Component {
+
+
 
   state = {
     postContent: "",
@@ -42,10 +51,14 @@ class NewPost extends React.Component {
   }
 
    render() {
+
+    const dummyAvatars = [avatar1, avatar2, avatar3, avatar4, avatar5, avatar6, avatar7]
+
     return (
       <div className="new-post">
           <form className="new-post__form" onSubmit={this.onPostSubmit}>
-              <FaceIcon className="new-post__avatar"/>
+              {/* <FaceIcon className="new-post__avatar"/> */}
+              <img src={dummyAvatars[this.state.userId]} alt="avatar" className="new-post__avatar" />
               <input 
                 type="text" 
                 name="postContent" 
@@ -55,11 +68,11 @@ class NewPost extends React.Component {
                 onChange={this.handleChange}
               />
               <button type="submit" className="new-post__button">
-                <SendIcon />
+                <SendIcon className="new-post__icon"/>
               </button>
               <div className="new-post__photo-input">
                 <label htmlFor="new-post__photo-label">
-                  <AddAPhotoIcon />
+                  <AddAPhotoIcon className="new-post__icon"/>
                 </label>
 
                 <input 
