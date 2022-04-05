@@ -10,6 +10,12 @@
     }
 }
 
+@mixin lg {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
 @mixin x-small {
     @media (min-width: 550px) {
         @content;

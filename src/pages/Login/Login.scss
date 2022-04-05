@@ -1,6 +1,6 @@
 @use "../../styles/partials/mixins" as *;
 
-.signup {
+.login {
 
     &__content {
     margin-top: 60px;
@@ -62,8 +62,7 @@
     &__footer {
         padding: 0 1rem;
         max-width: 500px;
-       
-
+        margin: 0 auto;
     }
 
     &__footer-span {

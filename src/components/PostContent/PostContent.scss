@@ -2,18 +2,23 @@
 
 .post-content {
     width: 100%;
+    box-sizing: border-box;
+    margin-top: 1rem;
 
     @include x-small {
-        width: 65%;
-        margin: 0 auto;
+        padding-right: 9.5rem;
     }
 
     @include tablet {
-        width: 50%;
+        width: 100%;
+        max-width: 1020px;
+        padding-left: 9.5rem;
+        margin: 0 auto;
     }
    
     @include desktop {
-        width: 500px;
+       
+        
     }
 
     &__title {

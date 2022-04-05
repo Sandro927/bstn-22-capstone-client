@@ -12,8 +12,9 @@ import './Navbar.scss'
 function Navbar() {
 
   let token = sessionStorage.getItem('authToken'); 
-
-
+   
+   
+  
   return (
     <div className='navbar'>
       <div className='navbar__content'>
@@ -46,11 +47,12 @@ function Navbar() {
           <NavLink activeClassName='navbar__link--active' to='/nowhere' className='navbar__link'> 
             <FaceIcon className="navbar__icon"/>
           </NavLink>
-          <p className='navbar__user'>{token ? sessionStorage.getItem('username') : <button>Login</button>}</p>
+          
         </div>
       </div>        
     </div>
-  )
+  ) 
+
 }
 
 export default Navbar

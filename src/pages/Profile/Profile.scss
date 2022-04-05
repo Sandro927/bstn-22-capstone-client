@@ -1,0 +1,19 @@
+@use "../../styles/partials/mixins" as *;
+
+.profile {
+
+    &__content {
+        margin: 60px auto 0;
+        max-width: 450px;
+        padding: 0 1rem;
+
+        @include tablet {
+            margin-top: 64px;
+        }  
+    }
+
+    &__title {
+        text-align: center;
+    }
+   
+}

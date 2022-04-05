@@ -18,8 +18,7 @@
         @include flex-space-center;
 
         @include desktop {
-            width: 1020px;
-            margin: 0 auto;
+          
             flex-grow: 0;
             left:0;
         }
@@ -35,19 +34,19 @@
    
 
     &__icon {
-        width:28px !important;
-        height:28px !important;
+        width:24px !important;
+        height:24px !important;
         
         padding: 1rem;
 
         @include tablet {
-            width: 32px !important;
-            height: 32px !important;  
+            width: 28px !important;
+            height: 28px !important;  
         }
 
         &:hover {
             background-color: rgb(243 244 246);
-            color: rgb(139 92 246);
+            color: #9900F0;
         }
     }
 
@@ -76,14 +75,15 @@
     }
 
     &__right {
-        @include flex-middle;
+        display: flex;
+        justify-content: flex-end;
         @include x-small {
             width: 40%;    
         }
     }
 
     &__link--active {
-        color: rgb(139 92 246);
+        color: #9900F0;
     }
 
     &__user {
@@ -103,7 +103,8 @@
     }
 
     &__logo {
-        @include flex-middle;
+        display: flex;
+        align-items: center;
         text-decoration: none;
         font-weight: 600;
     }

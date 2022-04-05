@@ -55,4 +55,9 @@
     &__avatar {
         @include avatar;
     }
+
+    &__likes-text {
+        color: #9900F0;
+        font-weight: 600;
+    }
 }

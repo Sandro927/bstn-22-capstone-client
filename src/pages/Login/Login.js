@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './Login.scss';
+import { Link } from 'react-router-dom';
 
 export default class Login extends Component {
 
@@ -41,42 +43,37 @@ export default class Login extends Component {
   render() {
     return (
       <main className="login">
-      <div className="login__content">
-        <h1 className="login__title">Login</h1>
-        <form className="login__form" onSubmit={this.handleSubmit}>
-
-            <div className="login__field">
-                <label htmlFor="username" className="login__field">
-                  Username
-                </label>
-                <input 
-                  type="text" 
-                  id="username" 
-                  name="username" 
-                  className="login__input" 
-                  value={this.state.username} 
-                  onChange={this.handleChange}
-                />
-            </div>
-
-            <div className="login__field">
-                <label htmlFor="password" className="login__field">
-                  Password
-                </label>
-                <input 
-                  type="password" 
-                  id="password" 
-                  name="password" 
-                  className="login__input" 
-                  value={this.state.password} 
-                  onChange={this.handleChange}
-                />
-            </div>
-
-            <button>Login</button>
-        </form>
-      </div>
-    </main>
+        <div className="login__content">
+          <h1 className="login__title">GG</h1>
+          <form className="login__form" onSubmit={this.handleSubmit}>
+            <input 
+              type="text" 
+              id="username" 
+              name="username" 
+              className="login__input" 
+              placeholder="Enter username"
+              value={this.state.username} 
+              onChange={this.handleChange}
+            />
+        
+            <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              className="login__input"
+              placeholder="Password" 
+              value={this.state.password} 
+              onChange={this.handleChange}
+            />
+              <button className="login__button">LOGIN</button>
+          </form>
+          <div className="login__footer">
+            <h6 className="login__spacer"><span className="login__footer-span">OR</span></h6>
+            <Link to='/signup' className="login__link">SIGN UP</Link>
+          </div>
+          
+        </div>
+      </main>
     )
   }
 }

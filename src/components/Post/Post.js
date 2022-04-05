@@ -16,7 +16,6 @@ import avatar6 from '../../assets/avatars/avatar6.png';
 import avatar7 from '../../assets/avatars/avatar7.png';
 
 
-
 class Post extends React.Component {
 
  
@@ -83,7 +82,7 @@ class Post extends React.Component {
               <img className="post__avatar" src={dummyAvatars[this.state.userId]} alt="avatar"/>
              
               <div className="post__body">
-                <Link to={`/users/current/dashboard`} className="post__link">
+                <Link to={`/users/${this.state.userId}/profile`} className="post__link">
                 <p className="post__user">{this.state.username}</p>
                 </Link>
                 <div className="post__user-info">

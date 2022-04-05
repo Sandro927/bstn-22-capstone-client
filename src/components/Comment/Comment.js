@@ -75,9 +75,9 @@ export class Comment extends Component {
                         <div className="comment__footer">
                             <div className="comment__likes">
                                 <ThumbUpIcon className="comment__icon" onClick={this.handleLikeClick}/>
-                                <p>{this.state.likeCount} Likes</p>
+                                <p className="comment__likes-text">{this.state.likeCount} Likes</p>
                             </div>
-                            <p>{this.state.commentedAt}</p>
+                            <p className="comment__timestamp">{this.state.commentedAt}</p>
                         </div>
                     </div>
                 </>

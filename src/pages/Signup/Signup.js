@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
-import './Signup.scss'
+import './Signup.scss';
+import { Link } from 'react-router-dom';
 
 export default class Signup extends React.Component {
 
@@ -38,30 +39,45 @@ export default class Signup extends React.Component {
     return (
       <main className="signup">
         <div className="signup__content">
-          <h1 className="signup__title">Sign up!</h1>
+          <h1 className="signup__title">Sign up Today!</h1>
           <form className="signup__form" onSubmit={this.handleSubmit}>
-              <div className="signup__field">
-                  <label htmlFor="name" className="signup__field">
-                    Name
-                  </label>
-                  <input type="text" id="name" name="name" className="signup__input" value={this.state.name} onChange={this.handleChange}/>
-              </div>
+                  <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    className="signup__input" 
+                    value={this.state.name} 
+                    onChange={this.handleChange}
+                    placeholder="Enter your name"
+                  />
+            
+                  <input 
+                    type="text" 
+                    id="username" 
+                    name="username" 
+                    className="signup__input" 
+                    value={this.state.username} 
+                    onChange={this.handleChange}
+                    placeholder="Enter your username"
+                  />
 
-              <div className="signup__field">
-                  <label htmlFor="username" className="signup__field">
-                    Username
-                  </label>
-                  <input type="text" id="username" name="username" className="signup__input" value={this.state.username} onChange={this.handleChange}/>
-              </div>
+                  <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    className="signup__input" 
+                    value={this.state.password} 
+                    onChange={this.handleChange}
+                    placeholder="Enter your password"
+                  />
+              
 
-              <div className="signup__field">
-                  <label htmlFor="password" className="signup__field">
-                    Password
-                  </label>
-                  <input type="password" id="password" name="password" className="signup__input" value={this.state.password} onChange={this.handleChange}/>
-              </div>
+              <button className="signup__button">Sign Up</button>
 
-              <button>Sign Up</button>
+              <div className="signup__footer">
+                <h6 className="signup__spacer"><span className="signup__footer-span">Already have an account?</span></h6>
+                <Link to="/login" className="signup__link">LOG IN</Link>
+              </div>
           </form>
         </div>
       </main>
