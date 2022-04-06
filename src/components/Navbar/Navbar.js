@@ -11,10 +11,10 @@ import './Navbar.scss'
 
 function Navbar() {
 
-  let token = sessionStorage.getItem('authToken'); 
+  const token = sessionStorage.getItem('authToken'); 
+  const userAvatar = sessionStorage.getItem('userAvatar');
+  const userId = sessionStorage.getItem('userId');
    
-   
-  
   return (
     <div className='navbar'>
       <div className='navbar__content'>
@@ -44,8 +44,13 @@ function Navbar() {
         </div>
 
         <div className='navbar__right'>
-          <NavLink activeClassName='navbar__link--active' to='/nowhere' className='navbar__link'> 
-            <FaceIcon className="navbar__icon"/>
+          <NavLink to={`/users/${userId}/profile`} className='navbar__link'> 
+          {
+            token ? 
+              <img src={userAvatar} className="navbar__icon navbar__icon-avatar"/> 
+            : 
+              <FaceIcon className="navbar__icon"/>
+            } 
           </NavLink>
           
         </div>

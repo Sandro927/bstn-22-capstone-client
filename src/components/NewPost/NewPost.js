@@ -53,12 +53,12 @@ class NewPost extends React.Component {
    render() {
 
     const dummyAvatars = [avatar1, avatar2, avatar3, avatar4, avatar5, avatar6, avatar7]
-
+    const userAvatar = sessionStorage.getItem('userAvatar');
     return (
       <div className="new-post">
           <form className="new-post__form" onSubmit={this.onPostSubmit}>
               <div className="new-post__body">
-                <img src={dummyAvatars[this.state.userId]} alt="avatar" className="new-post__avatar" />
+                <img src={userAvatar} alt="avatar" className="new-post__avatar" />
                 <input 
                   type="text" 
                   name="postContent" 

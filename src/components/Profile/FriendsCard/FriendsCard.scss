@@ -1,0 +1,29 @@
+@use "../../../styles/partials/mixins" as *;
+
+.friendscard {
+    margin-top: 1rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    background: white;
+    border-radius: .5rem; 
+    @include flex-column-center;
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 1rem 3rem;
+    }
+
+    &__friend {
+        @include flex-column-center;
+        padding: 1rem 1rem;
+    }
+
+    &__avatar {
+        @include avatar;
+    }
+
+    &__title {
+        padding-top: 1rem;
+    }
+}

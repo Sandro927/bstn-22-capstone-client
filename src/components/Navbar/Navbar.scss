@@ -1,7 +1,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .navbar {
-    height: 60px;
+    height: 56px;
     width: 100%;
     position: fixed; 
     top: 0; 
@@ -11,7 +11,7 @@
     z-index: 2;
 
     @include tablet {
-        height: 64px;
+        height: 60px;
     }
 
     &__content {
@@ -36,7 +36,6 @@
     &__icon {
         width:24px !important;
         height:24px !important;
-        
         padding: 1rem;
 
         @include tablet {
@@ -48,6 +47,14 @@
             background-color: rgb(243 244 246);
             color: #9900F0;
         }
+    }
+
+    &__icon-avatar {
+        border-radius: 50%
+    }
+
+    &__icon-avatar:hover {
+        background-color: white;
     }
 
     &__center {

@@ -5,6 +5,7 @@ import Friendbar from '../../components/Friendbar/Friendbar';
 import axios from 'axios';
 import './Feed.scss';
 
+
 export class Feed extends Component {
 
   state = {
@@ -29,7 +30,7 @@ export class Feed extends Component {
             })
             sessionStorage.setItem('username', this.state.userInfo.username);
             sessionStorage.setItem('userId', this.state.userInfo.userId);
-            //If the user has not filled out their profile yet, redirect to profile page.
+            sessionStorage.setItem('userAvatar', (this.state.userInfo.userAvatar || "https://www.svg.com/img/gallery/the-most-terrible-things-master-chief-has-ever-done/intro-1556227104.webp"))
         })
     }
   }

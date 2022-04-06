@@ -8,7 +8,8 @@ export default class Signup extends React.Component {
   state = {
     name: "",
     username: "",
-    password: ""
+    password: "",
+    avatarURL: ""
   }
 
   handleSubmit = (e) => {
@@ -17,6 +18,7 @@ export default class Signup extends React.Component {
       name: this.state.name,
       username: this.state.username,
       password: this.state.password,
+      avatarURL: this.state.avatarURL
     })
     .then(res => {
       console.log(res)
@@ -69,6 +71,16 @@ export default class Signup extends React.Component {
                     value={this.state.password} 
                     onChange={this.handleChange}
                     placeholder="Enter your password"
+                  />
+
+                  <input 
+                    type="text" 
+                    id="avatar" 
+                    name="avatarURL" 
+                    className="signup__input" 
+                    value={this.state.avatarURL} 
+                    onChange={this.handleChange}
+                    placeholder="Enter URL to avatar image"
                   />
               
 

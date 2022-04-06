@@ -1,7 +1,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .new-post {
-    margin: 1rem;
+    margin: 1rem 0;
     padding: 1rem;
     background-color: white;
     @include flex-space-center;
@@ -16,7 +16,7 @@
 
     &__avatar {
         @include avatar;
-        padding-right: .5rem;
+        margin-right: .5rem;
        
     }
 
@@ -24,7 +24,7 @@
         @include flex-center;
         flex-wrap: wrap;
         width: 100%;
-       
+        
         
        
     }
@@ -76,7 +76,7 @@
     }
 
     &__body {
-        @include flex-center;
+        @include flex-middle;
         width: 100%;
         
         overflow: hidden;

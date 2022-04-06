@@ -3,17 +3,12 @@
 .profile {
 
     &__content {
-        margin: 60px auto 0;
+        margin: 56px auto 0;
         max-width: 450px;
-        padding: 0 1rem;
+        padding: 1rem;
 
         @include tablet {
-            margin-top: 64px;
+            margin-top: 60px;
         }  
     }
-
-    &__title {
-        text-align: center;
-    }
-   
 }

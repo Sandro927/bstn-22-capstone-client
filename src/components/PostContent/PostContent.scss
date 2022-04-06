@@ -3,16 +3,16 @@
 .post-content {
     width: 100%;
     box-sizing: border-box;
-    margin-top: 1rem;
+    padding: 1rem;
 
     @include x-small {
-        padding-right: 9.5rem;
+        padding-right: 10.5rem;
     }
 
     @include tablet {
         width: 100%;
         max-width: 1020px;
-        padding-left: 9.5rem;
+        padding-left: 10.5rem;
         margin: 0 auto;
     }
    

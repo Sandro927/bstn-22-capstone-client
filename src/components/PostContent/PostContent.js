@@ -19,7 +19,6 @@ export class PostContent extends Component {
         axios.get('http://localhost:3030/posts')
         .then(res => {
             this.setState({ posts: res.data})
-            console.log(res.data);
         })
         .catch(err => {
             console.log(err);
@@ -38,7 +37,6 @@ export class PostContent extends Component {
             { 
                 this.state.posts ? 
                     this.state.posts.map(post =>{
-                        console.log(post);
                     return <Post postContent={post} key={post.postId}/>}) : 'Loading....'
             }
             

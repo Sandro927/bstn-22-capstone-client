@@ -45,10 +45,11 @@ export class AddComment extends Component {
   render() {
 
     const dummyAvatars = [avatar1, avatar2, avatar3, avatar4, avatar5, avatar6, avatar7];
+    const userAvatar = sessionStorage.getItem('userAvatar');
 
     return (
         <div className="new-comment">
-            <img src={dummyAvatars[0]} className="new-comment__avatar"/>
+            <img src={userAvatar} className="new-comment__avatar"/>
             <form className="new-comment__form" onSubmit={this.handleCommentSubmit}>
                 <input 
                     name="commentContent"

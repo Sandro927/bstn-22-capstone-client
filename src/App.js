@@ -19,7 +19,7 @@ function App() {
           <Route path="/signup" component={Signup} />
           <Route path="/login" component={Login} />
           <Route path="/users/current/Dashboard" render={(routerProps)=><Dashboard {...routerProps}/>} />
-          <Route path="/users/:UserId/Profile" render={(routerProps)=><Profile {...routerProps}/>} />
+          <Route path="/users/:userId/Profile" render={(routerProps)=><Profile {...routerProps}/>} />
         </Switch>
       </div>
     </BrowserRouter>

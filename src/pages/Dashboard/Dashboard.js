@@ -21,7 +21,6 @@ class Dashboard extends React.Component {
          const { userId } = sessionStorage.getItem('userId');  
         axios.get(`http://localhost:3030/users/${userId}/dashboard`)
             .then((res) => {
-                console.log(res.data)
             })
             .catch((err) => {
                 console.log(err);

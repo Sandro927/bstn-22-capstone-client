@@ -28,12 +28,11 @@ class Post extends React.Component {
     postedAt: null,
     postId: null,
     likeCount: null,
-    commentsActive: false
+    commentsActive: false,
+    postAvatar: null
   }
 
   componentDidMount() {
-
-    
     const { username, userId, postContent, postImage, postedAt, postId, likeCount  } = this.props.postContent;
   
     this.setState({
@@ -43,8 +42,17 @@ class Post extends React.Component {
       postContent: postContent,
       postImage: postImage,
       postId: postId,
-      likeCount: likeCount
-    })
+      likeCount: likeCount,
+    }, () => {
+      axios.get(`http://localhost:3030/users/${this.state.userId}`)
+        .then(res => {
+          this.setState({
+            postAvatar: res.data.userAvatar || "https://www.svg.com/img/gallery/the-most-terrible-things-master-chief-has-ever-done/intro-1556227104.webp"
+          })
+        })
+      })
+
+    
   }
 
   handleLikeClick = () => {
@@ -79,7 +87,7 @@ class Post extends React.Component {
           <div className="post__content">
               
              
-              <img className="post__avatar" src={dummyAvatars[this.state.userId]} alt="avatar"/>
+              <img className="post__avatar" src={this.state.postAvatar} alt="avatar"/>
              
               <div className="post__body">
                 <Link to={`/users/${this.state.userId}/profile`} className="post__link">

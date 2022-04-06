@@ -4,24 +4,20 @@ import { Link } from 'react-router-dom';
 import PeopleIcon from '@mui/icons-material/People';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
-import avatar1 from '../../assets/avatars/avatar1.png';
-import avatar2 from '../../assets/avatars/avatar2.png';
-import avatar3 from '../../assets/avatars/avatar3.png';
-import avatar4 from '../../assets/avatars/avatar4.png';
-import avatar5 from '../../assets/avatars/avatar5.png';
-import avatar6 from '../../assets/avatars/avatar6.png';
-import avatar7 from '../../assets/avatars/avatar7.png';
-
 
 function Sidebar() {
-    const dummyAvatars = [avatar1, avatar2, avatar3, avatar4, avatar5, avatar6, avatar7];
+    const userAvatar = sessionStorage.getItem('userAvatar');
+    const username = sessionStorage.getItem('username');
+    const userId = sessionStorage.getItem('userId');
     return (
         <div className="sidebar">
             <div className="sidebar__body">
-                <div className="sidebar__row">
-                    <img src={dummyAvatars[0]} className="sidebar__icon"/>
-                    <p className="sidebar__text">{sessionStorage.getItem('username')}</p>
-                </div>
+
+                <Link to={`/users/${userId}/profile`} className="sidebar__row">
+                    <img src={userAvatar} className="sidebar__icon"/>
+                    <p className="sidebar__text">{username}</p>
+                </Link>
+               
 
                 <div className="sidebar__row">
                     <PeopleIcon className="sidebar__icon"/>
@@ -42,10 +38,10 @@ function Sidebar() {
                 <h2 className="sidebar__title">Shortcuts</h2>  
 
                 <div>
-                    <Link>
+                    <a href="http://www.twitch.tv">
                         <img />
                         <p>Twitch</p>
-                    </Link>
+                    </a>
                 </div>
 
                 <div>
