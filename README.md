@@ -1,70 +1,229 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# GG - Gathering Gamers
 
-## Available Scripts
+GG is a social media platform geared towards gamers. Users can share posts, like and comment on posts and view others users profiles.
+On the User Profile page users can see the games their friends play, and their usersnames for each platform. They can see a list of their friends, and even their most recent post.
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## API Reference
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### /users Requests
 
-### `npm test`
+#### Create New User
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```http
+  POST /register
+```
 
-### `npm run build`
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `name` | `string` | **Required**. Your name |
+| `username` | `string` | **Required**. Your username |
+| `password` | `string` | **Required**. Your password(encrypted) |
+| `avatar` | `string` | Your user avatar. Defaults to master chief. |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Login as user
+```http
+  POST /login
+```
 
-### `npm run eject`
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `username` | `string` | **Required**. Your username |
+| `password` | `string` | **Required**. Your password(encrypted) |
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Gets current user data
+```http
+  GET /current
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+#### Gets user Avatar
+```http
+  GET /:userId
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Response 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```http
+{
+    "userAvatar": "avatar_url
+}
+   
+```
 
-### Code Splitting
+#### Updates user Avatar
+```http
+  PUT /:userId
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+#### Gets user profile data
+```http
+  GET /:userId/profile
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Response 
 
-### Making a Progressive Web App
+```http
+{
+    "user_avatar": "user_avatar",
+    "origin_username": "origin_username",
+    "discord_username": "discord_username",
+    "steam_username": "steam_username",
+    ...
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### adds user profile data
+```http
+  POST /:userId/profile
+```
 
-### Advanced Configuration
+#### updates user profile data
+```http
+  PUT /:userId/profile
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+### /posts Requests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Gets Posts
+
+```http
+  GET /
+```
+
+
+#### Create New Post
+
+```http
+  POST /
+```
+
+
+#### Increment Post likes
+
+```http
+  PUT /:postId/like
+```
+
+#### get comments on a post
+
+```http
+  GET /:postId/comment
+```
+
+#### Create comment on a post
+
+```http
+  POST /:postId/comments
+```
+
+#### like a comment on a post
+
+```http
+  PUT /:postId/comments/:commentId/like
+```
+
+#### Get a single users posts
+
+```http
+  GET /:userId
+```
+
+
+
+
+
+
+
+
+
+
+
+
+## Tech Stack
+
+**Client:** React, SCSS, Chart.js, timeago.js
+
+**Server:** Node, Express, Knex.js, mysql, bcrypt 
+
+
+## Features
+
+- Login/Signup with username and password
+- post text content
+- liking posts
+- commenting on posts
+- liking comments
+- Viewing user profiles
+- Setting content on profiles for others to view (including usernames)
+
+
+## Run Locally
+
+#### Open in Separate Explorers
+
+Clone the server
+
+```bash
+  git clone https://github.com/Sandro927/bstn-22-capstone-server.git
+```
+
+Clone the client
+
+```bash
+  git clone https://github.com/Sandro927/bstn-22-capstone-client.git
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+To Start the server
+
+```bash
+  node server
+```
+
+To Start the client
+
+```bash
+  npm start
+```
+## Roadmap
+
+- Complete Dashboard
+
+- Add photo upload functionality
+
+- Add functionality to add friends
+
+- Add private messaging functionality
+
+- Add video upload functionality
+
+- implement passport.js
+
+ 
+
+
+## Lessons Learned
+
+What did you learn while building this project? What challenges did you face and how did you overcome them?
+
+I ran into several obstacles when building this project. The first one was the design phase. This was the first real
+project that I had to design from scratch and that was definitely a struggle, as I kept changing the design and second
+guessing. It got easier as I started to look at other websites for design cues instead of trying to make everythign up
+myself. The second obstacle I ran into was images, I though using multer to upload images to a server would be easier and
+more practical, but it's not realistic in terms of scalability. I will likely rework the site with Next.js to make this easier.
