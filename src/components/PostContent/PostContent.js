@@ -3,7 +3,7 @@ import NewPost from '../NewPost/NewPost';
 import Post from '../Post/Post'
 import './PostContent.scss';
 import axios from 'axios';
-import StreamCard from '../StreamerCard/StreamerCard';
+import banner from '../../assets/banners/banner.jpg';
 
 export class PostContent extends Component {
 
@@ -33,6 +33,7 @@ export class PostContent extends Component {
     return (
         <div className="post-content">
             {/* <StreamCard /> */}
+            {/* <img class="post-content__banner" src={banner} /> */}
             <NewPost userId={this.props.userId} userAvatar={this.props.userAvatar} refreshPosts={this.refreshPosts}/>
             { 
                 this.state.posts ? 

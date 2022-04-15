@@ -17,10 +17,12 @@
     &__friend {
         @include flex-column-center;
         padding: 1rem 1rem;
+        
     }
 
     &__avatar {
         @include avatar;
+        margin-bottom: 1rem
     }
 
     &__title {

@@ -16,9 +16,8 @@
         margin: 0 auto;
     }
    
-    @include desktop {
-       
-        
+    &__banner {
+        width: 100%;
     }
 
     &__title {

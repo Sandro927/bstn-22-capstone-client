@@ -7,21 +7,24 @@ class ProfileCard extends React.Component {
 
     state = {
         bioText: "",
-        avatarURL: ""
+        avatarURL: "",
+        userName: ""
     }
 
     componentDidMount() {
         axios.get(`http://localhost:3030/users/${this.props.userId}/profile`)
         .then(res => {
+            console.log(res.data.username)
           if (res.data.length === 0) {
                 axios.post(`http://localhost:3030/users/${this.props.userId}/profile`, {
                     userId: this.props.userId
                 })
             }
-            else if(res.data.bio || res.data.userAvatar) {
+            else if(res.data.bio || res.data.userAvata || res.data.username) {
                 this.setState({ 
                     bioText: res.data.bio,
-                    avatarURL: res.data.userAvatar
+                    avatarURL: res.data.userAvatar,
+                    userName: res.data.username
             })}
         })
         .catch(err => {
@@ -57,7 +60,7 @@ class ProfileCard extends React.Component {
                 <h1 className="profilecard__title">Profile</h1>
                 <div className="profilecard__content">
                     <img src={this.state.avatarURL || "https://www.svg.com/img/gallery/the-most-terrible-things-master-chief-has-ever-done/intro-1556227104.webp"} className="profilecard__avatar"/> 
-                    <p className="profilecard__user">Username</p>
+                    <p className="profilecard__user">{this.state.userName}</p>
                     {
                         this.props.userId !== sessionStorage.getItem('userId') ?
                         <>

@@ -65,7 +65,7 @@ export class Comment extends Component {
             !this.state.commentContent ? "Loading..." 
             :
                 <>
-                    <img src={dummyAvatars[this.state.userId]} className="comment__avatar"/>
+                    <img src={"https://productplacementblog.com/wp-content/uploads/2019/06/Oakley-Sunglasses-Worn-by-Steve-Carell-Michael-Scott-in-The-Office-4-800x450.jpg"} className="comment__avatar"/>
                     <div className="comment__content">
                         <div className="comment__body">
                             <p className="comment__user">{this.state.username}</p>

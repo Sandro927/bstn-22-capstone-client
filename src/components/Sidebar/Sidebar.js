@@ -38,17 +38,29 @@ function Sidebar() {
                 <h2 className="sidebar__title">Shortcuts</h2>  
 
                 <div>
-                    <a href="http://www.twitch.tv">
+                    <a href="http://www.twitch.tv" className="sidebar__link">
                         <img />
                         <p>Twitch</p>
                     </a>
                 </div>
 
                 <div>
-                    <Link>
+                    <a href='https://runescape.wiki/' className="sidebar__link">
                         <img />
                         <p>RuneWiki</p>
-                    </Link>
+                    </a>
+                </div>
+                <div>
+                    <a href='https://www.youtube.com/GAMING' className="sidebar__link">
+                        <img />
+                        <p>Youtube Gaming</p>
+                    </a>
+                </div>
+                <div>
+                    <a href='https://runescape.wiki/' className="sidebar__link">
+                        <img />
+                        <p>RuneWiki</p>
+                    </a>
                 </div>
             </div>
 

@@ -1,42 +1,63 @@
 import React from 'react';
 import './Friendbar.scss';
 import { Link } from 'react-router-dom';
-import avatar1 from '../../assets/avatars/avatar1.png';
-import avatar2 from '../../assets/avatars/avatar2.png';
-import avatar3 from '../../assets/avatars/avatar3.png';
-import avatar4 from '../../assets/avatars/avatar4.png';
-import avatar5 from '../../assets/avatars/avatar5.png';
-import avatar6 from '../../assets/avatars/avatar6.png';
-import avatar7 from '../../assets/avatars/avatar7.png';
-
 
 function Friendbar() {
-  const dummyAvatars = [avatar1, avatar2, avatar3, avatar4, avatar5, avatar6, avatar7];
+ 
   return (
     <div className="friendbar">
       <h2 className="friendbar__title">Friends</h2>
 
       <div className="friendbar__row">
         <Link className="friendbar__link">
-          <img src={dummyAvatars[3]} className="friendbar__icon"/>
-          <p className="friendbar__text">John Smith</p>
+          <img src={"https://static.fandomspot.com/images/06/16155/02-samus-aran-metroid-other-m-screenshot.jpg"} className="friendbar__icon"/>
+          <p className="friendbar__text">JDoe456</p>
         </Link>
       </div>
 
       <div className="friendbar__row">
-         <img src={dummyAvatars[4]} className="friendbar__icon"/>
-          <p className="friendbar__text">Jane Doe</p>
+        <Link className="friendbar__link">
+          <img src={"https://www.looper.com/img/gallery/the-mythology-in-god-of-war-explained/intro-1614185502.jpg"} className="friendbar__icon"/>
+          <p className="friendbar__text">Kratos</p>
+        </Link>
       </div>
 
       <div className="friendbar__row">
-          <img src={dummyAvatars[5]} className="friendbar__icon"/>
-          <p className="friendbar__text">Mike</p>
+         <img src={"https://www.zeldadungeon.net/wp-content/uploads/2013/09/Link1.png"} className="friendbar__icon"/>
+          <p className="friendbar__text">Link</p>
       </div>
 
       <div className="friendbar__row">
-          <img src={dummyAvatars[6]} className="friendbar__icon"/>
-          <p className="friendbar__text">Frank</p>
+          <img src={"https://freegametips.com/wp-content/uploads/2020/09/1600887744_Bowser-Super-Mario-A-very-peculiar-villain-1024x576.jpg"} className="friendbar__icon"/>
+          <p className="friendbar__text">Bowser</p>
+      </div>
+
+      <div className="friendbar__row">
+          <img src={"https://cdn.vox-cdn.com/thumbor/q9ldkEs7xbEWFgMBondzK3Ntzqs=/85x0:1014x619/920x613/filters:focal(85x0:1014x619):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/29585969/mgsvgz_ss_demo_002.0.jpg"} className="friendbar__icon"/>
+          <p className="friendbar__text">Snake</p>
       </div>  
+
+      <div className="friendbar__row">
+        <Link className="friendbar__link">
+          <img src={"https://cdn.vox-cdn.com/thumbor/EX9U2X34axDOUD9Jo2bokrM_Lvg=/0x0:3000x2000/920x613/filters:focal(1260x760:1740x1240):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/64062111/1_LGFTlvUlC8iJ5mi-UPF7Uw.0.0.0.jpeg"} className="friendbar__icon"/>
+          <p className="friendbar__text">Peter</p>
+        </Link>
+      </div>
+
+      <div className="friendbar__row">
+        <Link className="friendbar__link">
+          <img src={"https://static0.gamerantimages.com/wordpress/wp-content/uploads/2021/07/geralt-of-rivia-witcher-3-feature.jpg?q=50&fit=contain&w=960&h=500&dpr=1.5"} className="friendbar__icon"/>
+          <p className="friendbar__text">Geralt</p>
+        </Link>
+      </div>
+      <div className="friendbar__row">
+        <Link className="friendbar__link">
+          <img src={"https://static1-us.millenium.gg/articles/8/97/28/@/113699-1224405-sylvanas-article-image-bd-1-article_image_bd-1.jpg"} className="friendbar__icon"/>
+          <p className="friendbar__text">Sylvanas</p>
+        </Link>
+      </div>
+
+      
     </div>
   )
 }
