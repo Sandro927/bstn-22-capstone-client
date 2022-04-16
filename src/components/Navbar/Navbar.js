@@ -6,57 +6,72 @@ import ForumIcon from '@mui/icons-material/Forum'; //Messasging Icon
 import GroupAddIcon from '@mui/icons-material/GroupAdd'; //Group finder icon
 import FaceIcon from '@mui/icons-material/Face'; //Avatar Icon
 
+
 import  { NavLink } from 'react-router-dom';
 import './Navbar.scss'
 
-function Navbar() {
+class Navbar extends React.Component {
 
-  const token = sessionStorage.getItem('authToken'); 
-  const userAvatar = sessionStorage.getItem('userAvatar');
-  const userId = sessionStorage.getItem('userId');
-   
-  return (
-    <div className='navbar'>
-      <div className='navbar__content'>
-        <div className='navbar__left'>
-          <NavLink to='/' className='navbar__logo navbar__link--active'> 
-            <VideogameAssetIcon className="navbar__icon"/>
-            <p>GG</p>
-          </NavLink>
-        </div>
+  state = {
+    userAvatar: null,
+    userId: null
+  }
 
-        <div className='navbar__center'>
-          <NavLink activeClassName='navbar__link--active' to='/' className='navbar__link'> 
-            <HomeIcon className="navbar__icon"/>
-          </NavLink>
+  componentDidUpdate(prevProps) {
+    console.log('updated');
+    if (prevProps.isLoggedIn !== this.props.isLoggedIn) {
+      this.setState({
+        userAvatar: sessionStorage.getItem('userAvatar'),
+        userId: sessionStorage.getItem('userId')
+      })
+    }
+  }
 
-          <NavLink activeClassName='navbar__link--active' to='/nowhere' className='navbar__link'> 
-            <SpeedIcon className="navbar__icon"/>
-          </NavLink>
-
-          <NavLink activeClassName='navbar__link--active' to='/nowhere' className='navbar__link'> 
-            <ForumIcon className="navbar__icon"/>
-          </NavLink>
-
-          <NavLink activeClassName='navbar__link--active' to='/nowhere' className='navbar__link'> 
-            <GroupAddIcon className="navbar__icon"/>
-          </NavLink>
-        </div>
-
-        <div className='navbar__right'>
-          <NavLink to={`/users/${userId}/profile`} className='navbar__link'> 
-          {
-            token ? 
-              <img src={userAvatar} className="navbar__icon navbar__icon-avatar"/> 
-            : 
-              <FaceIcon className="navbar__icon"/>
-            } 
-          </NavLink>
-          
-        </div>
-      </div>        
-    </div>
-  ) 
+  render () {
+    return (
+      <div className='navbar'>
+        <div className='navbar__content'>
+          <div className='navbar__left'>
+            <NavLink to='/' className='navbar__logo navbar__link--active'> 
+              <VideogameAssetIcon className="navbar__icon"/>
+              <p>GG</p>
+            </NavLink>
+          </div>
+  
+          <div className='navbar__center'>
+            <NavLink activeClassName='navbar__link--active' to='/' className='navbar__link'> 
+              <HomeIcon className="navbar__icon"/>
+            </NavLink>
+  
+            <NavLink activeClassName='navbar__link--active' to='/nowhere' className='navbar__link'> 
+              <SpeedIcon className="navbar__icon"/>
+            </NavLink>
+  
+            <NavLink activeClassName='navbar__link--active' to='/nowhere' className='navbar__link'> 
+              <ForumIcon className="navbar__icon"/>
+            </NavLink>
+  
+            <NavLink activeClassName='navbar__link--active' to='/nowhere' className='navbar__link'> 
+              <GroupAddIcon className="navbar__icon"/>
+            </NavLink>
+          </div>
+  
+          <div className='navbar__right'>
+            <NavLink to={`/users/${this.state.userId}/profile`} className='navbar__link'> 
+            {
+              this.state.userAvatar ? 
+                <img src={this.state.userAvatar} className="navbar__icon navbar__icon-avatar" alt="Avatar"/> 
+              : 
+                <FaceIcon className="navbar__icon"/>
+              } 
+            </NavLink>
+            
+          </div>
+        </div>        
+      </div>
+    ) 
+  }
+  
 
 }
 

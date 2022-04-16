@@ -31,8 +31,9 @@ export default class Login extends Component {
     .then(res => {
        
         let token = res.data.token;
-        sessionStorage.setItem('authToken', token)
+        sessionStorage.setItem('authToken', token);
         this.props.history.push('/');
+       
     })
     .catch(err => {
       console.log(err);

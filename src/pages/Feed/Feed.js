@@ -30,7 +30,8 @@ export class Feed extends Component {
             })
             sessionStorage.setItem('username', this.state.userInfo.username);
             sessionStorage.setItem('userId', this.state.userInfo.userId);
-            sessionStorage.setItem('userAvatar', (this.state.userInfo.userAvatar || "https://www.svg.com/img/gallery/the-most-terrible-things-master-chief-has-ever-done/intro-1556227104.webp"))
+            sessionStorage.setItem('userAvatar', (this.state.userInfo.userAvatar));
+            this.props.setLoginState(true);
         })
     }
   }
